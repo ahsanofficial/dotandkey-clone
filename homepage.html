@@ -1,13 +1,892 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- slider css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <title>Document</title>
+    <style>
+        button{
+            background-color: rgb(66,66,63);
+            color: white;
+            font-size: 25px;
+            padding: 2px;
+            border: none;
+            margin: 2px;
+        }
+        #container {
+            width: 100%;
+            height: auto;
+        }
+
+        img{
+             cursor: pointer;
+        }
+
+        header {
+            width: 100%;
+            height: auto;
+            padding-bottom: 20px;
+            border-bottom: 0.3px solid #c5c5c0;
+        }
+
+        h6 {
+            width: 100%;
+            text-align: center;
+            background-color: #42423f;
+            color: white;
+            padding: 8px;
+            font-weight: 700;
+            font-size: x-small;
+        }
+
+        /*---------------------------------------- navvar-------------------------------------- */
+        #navvar {
+            display: flex;
+            width: 90%;
+            margin: auto;
+            align-items: center;
+        }
+
+        #navvar>div:nth-child(1) {
+            width: 35%;
+        }
+
+        #navvar>div:nth-child(2) {
+            width: 30%;
+        }
+
+        #navvar>div:nth-child(3) {
+            width: 35%;
+        }
+
+        .icon {
+            height: 25px;
+            width: 25px;
+            cursor: pointer;
+        }
+
+        #navvar>div:nth-child(3) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #input {
+            display: flex;
+            height: 30px;
+        }
+
+        input {
+            height: 28px;
+            display: block;
+        }
+
+        .form-control:focus {
+            color: #212529;
+            background-color: #fff;
+            border-color: inherit;
+            outline: 0;
+            box-shadow: none;
+        }
+
+        /*---------------------------------------- Productbar-------------------------------------- */
+        #productbar {
+            display: grid;
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 97%;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: 180px;
+            gap: 25px;
+        }
+
+        #productbar>div {
+            border-radius: 0.5em;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+
+        #productbar>div>h5 {
+            margin: 10px;
+            text-align: center;
+            font-weight: 650;
+        }
+
+        #productbar>div>div {
+            height: 75%;
+            width: 100%;
+        }
+
+        #productbar>div>div>img {
+            height: 100%;
+            width: 100%;
+            border-radius: 0.5em 0.5em 0 0;
+        }
+
+        /*---------------------------------------- midheading1-------------------------------------- */
+        #midheading1 {
+            margin: 25px;
+            text-align: center;
+            color: #3c3c3c;
+            line-height: 20px;
+            font-size: 25px;
+            padding-bottom: 25px;
+        }
+
+        #midheading1>h2 {
+            font-size: 50px;
+        }
+
+        #midheading1>h2>span {
+            font-style: italic;
+            font-size: 50px;
+        }
+
+        /*---------------------------------------- slider-------------------------------------- */
+        .carousel img {
+            width: 100%;
+        }
+
+
+        .containerslider2 {
+            margin: auto;
+            width: 80%;
+        }
+
+        /*---------------------------------------- midheading2-------------------------------------- */
+
+        .midheading {
+            margin-top: 100px;
+            text-align: center;
+            font-size: 20px;
+            padding-top: 45px;
+            padding-bottom: 45px;
+            font-weight: 640;
+            line-height: 5px;
+        }
+
+        .midheading>h2 {
+            font-style: italic;
+            font-size: xx-large;
+            padding-bottom: 20px;
+            font-weight: 650;
+        }
+
+        .midheading_div {
+            display: grid;
+            color: #85857c;
+            margin: auto;
+            font-size: large;
+            grid-template-rows: 50px;
+            grid-template-columns: repeat(7, auto);
+            width: 28%;
+        }
+
+        .midheading_div>span {
+            padding-top: 5px;
+        }
+
+        .midheading_div>span:nth-child(1) {
+            color: #ff6781;
+        }
+
+        .midheading_div>div {
+            margin-left: 5px;
+            height: 15px;
+            width: 1px;
+            background-color: #42423f;
+        }
+
+        /*---------------------------------------- slider2-------------------------------------- */
+        #slider2 {
+            width: 90%;
+            height: 220px;
+            margin: auto;
+            border-radius: 25px;
+        }
+
+        /*---------------------------------------- midheading2-------------------------------------- */
+        #midheading_div3 {
+            width: 32%;
+        }
+
+        /*---------------------------------------- grid1-------------------------------------- */
+        #grid1 {
+            display: grid;
+            margin: auto;
+            width: 90%;
+            grid-template-columns: repeat(5, 1fr);
+            grid-auto-flow: repeat(2, 200px);
+            gap: 13px;
+            grid-template-areas:
+                'a a b b b'
+                'c c c d d';
+        }
+
+        #grid1>div>img {
+            border-radius: 0.8em;
+        }
+
+        #grid1>div:nth-child(1) {
+            grid-area: a
+        }
+
+        #grid1>div:nth-child(2) {
+            grid-area: b
+        }
+
+        #grid1>div:nth-child(3) {
+            grid-area: c
+        }
+
+        #grid1>div:nth-child(4) {
+            grid-area: d
+        }
+
+        #grid1>div>img {
+            height: 100%;
+            width: 100%;
+        }
+
+        /*---------------------------------------- grid2-------------------------------------- */
+        #grid2 {
+            display: grid;
+            margin: auto;
+            width: 80%;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 300px);
+            gap: 13px;
+            column-gap: 40px;
+            grid-template-areas:
+                'a b'
+                'c d';
+        }
+
+        #grid2>div>img {
+            border-radius: 0.8em;
+        }
+
+        #grid2>div:nth-child(1) {
+            grid-area: a
+        }
+
+        #grid2>div:nth-child(2) {
+            grid-area: b
+        }
+
+        #grid2>div:nth-child(3) {
+            grid-area: c
+        }
+
+        #grid2>div:nth-child(4) {
+            grid-area: d
+        }
+
+        #grid2>div>img {
+            height: 100%;
+            width: 100%;
+        }
+
+        /*---------------------------------------- gridlast-------------------------------------- */
+
+        #gridlast{
+            display: grid;
+            margin: auto;
+            width: 80%;
+            grid-template-columns: repeat(2,1fr);
+            grid-auto-flow: repeat(2, 200px);
+            gap: 55px;
+            row-gap: 15px;
+        }
+        #gridlast>div>img{
+            height: 100%;
+            width: 100%;
+        }
+
+        /*---------------------------------------- grid3-------------------------------------- */
+        .normal {
+            margin: auto;
+            margin-top: 50px;
+            height: 370px;
+            width: 90%;
+        }
+
+        .normal>img {
+            height: 100%;
+            width: 100%;
+            border-radius: 0.8em;
+        }
+
+        /*---------------------------------------- midheading6-------------------------------------- */
+        #midheading6 {
+            margin-top: 25px;
+        }
+
+        /*---------------------------------------- grid4-------------------------------------- */
+        #normal4 {
+            margin-top: 0px;
+        }
+
+        /*---------------------------------------- midheading7-------------------------------------- */
+        #midheading7 {
+            line-height: 15px;
+            padding-bottom: 25px;
+        }
+
+        #midheading7>h2 {
+            padding: 10px;
+            margin: 0px;
+        }
+
+        /*---------------------------------------- lastpara-------------------------------------- */
+        .last_para {
+            margin: auto;
+            margin-top: 0px;
+            width: 90%;
+            text-align: center;
+            color: #3c3c3c;
+            font-size: 25px;
+            line-height: 35px;
+            padding-bottom: 25px;
+        }
+
+        .last_para>p>span {
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        /*---------------------------------------- grid5-------------------------------------- */
+        #normal5 {
+            margin: auto;
+            display: grid;
+            grid-template-rows: 150px;
+            gap: 80px;
+            width: 55%;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        #normal5>div>img {
+            height: 100%;
+            width: 100%;
+        }
+
+        /*---------------------------------------- grid6-------------------------------------- */
+        #normal6 {
+            display: grid;
+            width: 80%;
+            margin: auto;
+            gap: 30px;
+            text-align: center;
+            color: #3c3c3c;
+            font-size: 25px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            grid-template-areas:
+                'a a a'
+                'b c d'
+                'e f g';
+        }
+
+        #normal6>div:nth-child(1) {
+            grid-area: a;
+            text-align: center;
+            font-weight: bold;
+            font-size: 23px;
+            font-style: italic;
+        }
+
+        #normal6>div:nth-child(2) {
+            grid-area: b;
+        }
+
+        #normal6>div:nth-child(3) {
+            grid-area: c;
+        }
+
+        #normal6>div:nth-child(4) {
+            grid-area: d;
+        }
+
+        #normal6>div:nth-child(5) {
+            grid-area: e;
+        }
+
+        #normal6>div:nth-child(6) {
+            grid-area: f;
+        }
+
+        #normal6>div:nth-child(7) {
+            grid-area: g;
+        }
+
+        /*---------------------------------------- grid7-------------------------------------- */
+        #normal7 {
+            width: 90%;
+            margin: auto;
+        }
+
+
+
+        footer {
+            border-top:  0.3px solid #c5c5c0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(12, auto);
+        }
+
+        footer>div {
+            font-size: 15px;
+            padding: 70px;
+        }
+    </style>
 </head>
+
 <body>
-    <p>this is my homepage</p>
-    <p>don't touch other index.html & other pages</p>
+    <div id="container">
+        <header>
+            <h6>FREE LAVENDER VANITY POUCH ABOVE 1499</h6>
+            <!-- ---------------------------------------- navvar-------------------------------------- -->
+
+            <div id="navvar">
+                <div><a href="section.html"><img src="https://cdn-icons-png.flaticon.com/512/59/59660.png" class="icon"></a></div>
+                <div><img
+                        src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/unnamed_250x_200x_2x_260x_24408e11-6e3a-4a0c-8327-74d0455f7696_260x.jpg?v=1646547348" />
+                </div>
+                <div>
+                    <div id="input">
+                        <div><img
+                                src="https://cdn-icons.flaticon.com/png/512/2811/premium/2811806.png?token=exp=1648621590~hmac=a939009e5ce51271fa52a731ee4e86e5"
+                                class="icon"></div>
+                        <div>
+                            <form class="d-grid">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            </form>
+                        </div>
+                    </div>
+                    <div id="bag"><a href="bag.html"><img src="https://cdn-icons-png.flaticon.com/512/1656/1656850.png" class="icon" /></a>
+                    </div>
+                    <div id="profile"><a href="profile.html"><img src="https://cdn-icons-png.flaticon.com/512/929/929564.png" class="icon" /></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ---------------------------------------- productbar-------------------------------------- -->
+
+        <div id="productbar">
+            <div>
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Untitled-1_6.png?v=1640345399">
+                </div>
+                <h5>BODYCARE</h5>
+            </div>
+            <div>
+                <div>
+                    <img
+                        src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/2_10_1dbebc34-9644-403f-8852-c556d836e66c.png?v=1643087515">
+                </div>
+                <h5>HAIRCARE</h5>
+            </div>
+            <div>
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/3_11.png?v=1640345346">
+                </div>
+                <h5>NUTRITION</h5>
+            </div>
+            <div>
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_19.png?v=1643092197">
+                </div>
+                <h5>SERUM</h5>
+            </div>
+            <div>
+                <div>
+                    <img
+                        src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Untitled-1_7_47c1a313-615a-4e4f-994e-37886ca26458.png?v=1643105518">
+                </div>
+                <h5>MOISTURIZER</h5>
+            </div>
+        </div>
+
+        <!-- ---------------------------------------- slider1-------------------------------------- -->
+        <section class="mb-5">
+            <div id="carousel-1" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-1" data-slide-to="1"></li>
+                    <li data-target="#carousel-1" data-slide-to="2"></li>
+                    <li data-target="#carousel-1" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img class="d-block img-fluid"
+                            src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/2-Vit-C_543c0db5-e2e2-40f8-8d81-1843485ddcd7.jpg?v=1646999010"
+                            alt="slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid"
+                            src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/3-CICA_435ac3ef-df45-4268-8dc8-264444b711fb.jpg?v=164854324"
+                            alt="Slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid"
+                            src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/desk_home_5_275035e3-e342-44ca-b5a7-0915ab7c5d89.png?v=16486254176"
+                            alt="Slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid"
+                            src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1-HairCare_3c8682b6-bf93-4ee2-8a58-b6107cf4f35a.jpg?v=1647236860"
+                            alt="Slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid"
+                            src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Shop_ALL_Desktop_probiotics.jpg?v=1648041175"
+                            alt="Slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </a>
+                <a class="carousel-control-next" href="#carousel-1" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ---------------------------------------- midheading1-------------------------------------- -->
+
+        <div id="midheading1">
+            <p>loved by</p>
+            <h2>over <span>9 Lakh</span> customers</h2>
+        </div>
+
+        <!-- ---------------------------------------- slider2-------------------------------------- -->
+        <section class="mb-5" id="slider2">
+            <div id="carousel-2" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-2" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-2" data-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img class="d-block img-fluid"
+                            src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/ikwi_DESKTOP_banner_resize_2_2_441330c8-80cb-4a87-a688-2bbd55f35533.png?v=1648750321"
+                            alt="Slide">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid"
+                            src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/desk_sale.png?v=1648750342"
+                            alt="Slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carousel-2" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </a>
+                <a class="carousel-control-next" href="#carousel-2" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ---------------------------------------- midheading2-------------------------------------- -->
+        <div id="midheading2" class="midheading">
+            <p>OUR</p>
+            <h2>BESTSELLERS</h2>
+            <div class="midheading_div">
+                <span>SKIN</span>
+                <div></div>
+                <span>BODYCARE</span>
+                <div></div>
+                <span>NUTRITION</span>
+                <div></div>
+                <span>HAIRCARE</span>
+            </div>
+        </div>
+
+        <!-- ---------------------------------------- midheading3-------------------------------------- -->
+        <div id="midheading3" class="midheading">
+            <p>TOP</p>
+            <h2>SUMMER PICKS</h2>
+            <div class="midheading_div" id="midheading_div3">
+                <span>SKINCARE</span>
+                <div></div>
+                <span>BODYCARE</span>
+                <div></div>
+                <span>HAIRCARE</span>
+                <div></div>
+                <span>NUTRITION</span>
+            </div>
+        </div>
+
+        <!-- ---------------------------------------- midheading3-------------------------------------- -->
+        <div id="midheading3" class="midheading">
+            <p>FIND YOUR</p>
+            <h2>SKINCARE REGIME</h2>
+        </div>
+
+        <!-- ---------------------------------------- midheading4-------------------------------------- -->
+        <div id="midheading4" class="midheading">
+            <p>IN THE</p>
+            <h2>SPOTLIGHT</h2>
+        </div>
+
+        <!-- ---------------------------------------- grid1-------------------------------------- -->
+        <div id="grid1">
+            <div><img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/3-SERUMS_1_1.png?v=1646917496"></div>
+            <div><img
+                    src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/5-Probiotics_Gel_1_1.png?v=1646917497">
+            </div>
+            <div><img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1-hairCare_1_1.png?v=1646917497">
+            </div>
+            <div><img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/6-CLAY_1_1.png?v=1646917497"></div>
+        </div>
+
+        <!-- ---------------------------------------- midheading5-------------------------------------- -->
+        <div id="midheading5" class="midheading">
+            <p>SHOP BY</p>
+            <h2>INGREDIENTS</h2>
+        </div>
+
+        <!-- ---------------------------------------- grid2-------------------------------------- -->
+        <div id="grid2">
+            <div><img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard_1-3_8.jpg?v=1648804976">
+            </div>
+            <div><img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard_1-2_6.jpg?v=1648804829">
+            </div>
+            <div><img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard_1_16.jpg?v=1648804781"></div>
+            <div><img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard_1-4_9.jpg?v=1648804687">
+            </div>
+        </div>
+
+        <div id="midheadinglast" class="midheading">
+            <p>SHOP BY</p>
+            <h2>CONCERN</h2>
+        </div>
+
+        <div id="gridlast">
+            <div><img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard_1_11.jpg?v=1642572083"></div>
+            <div><img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard_1-2_1.jpg?v=1642508302"></div>
+            <div><img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard_1-3_3.jpg?v=1642508305"></div>
+            <div><img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard_5.png?v=1643092291"></div>
+        </div>
+
+        <!-- ---------------------------------------- grid3-------------------------------------- -->
+        <div class="normal"><img
+                src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Desktop_homepage_1_3d9730b7-4aa9-4328-97e5-d7b1762275b0.png?v=1647001294" />
+        </div>
+
+        <!-- ---------------------------------------- midheading6-------------------------------------- -->
+        <div id="midheading6" class="midheading">
+            <p>LOVE IS GREATER</p>
+            <h2>WHEN SHARED</h2>
+        </div>
+
+
+        <!-- ---------------------------------------- grid4-------------------------------------- -->
+        <div class="normal" id="normal4"><img
+                src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/DESKTOP_b3c3b9a2-c923-487b-aa2f-26a68e3d4d43.png?v=1645769083" />
+        </div>
+
+        <!-- ---------------------------------------- midheading7-------------------------------------- -->
+        <div id="midheading7" class="midheading">
+            <h2>CLEAN BEAUTY</h2>
+            <p>WITH UNCOMPROMISED EFFICACY</p>
+        </div>
+
+        <!-- ---------------------------------------- lastpara-------------------------------------- -->
+        <div class="last_para">
+            <p>At Dot & Key, we strive to find the missing <span>"dots"</span> in your skincare regime and are obsessed
+                with providing solutions or <span>"keys"</span> to these.</p>
+        </div>
+
+        <div class="last_para">
+            <p>Our revolutionary products are crafted with utmost care and love for you. By blending <span>luxurious
+                    botanicals</span> with <span> performance actives,</span> we bring to you clean formulations that
+                are absolutely safe, delightfully gentle and unquestionably effective.</p>
+        </div>
+
+        <!-- ---------------------------------------- grid5-------------------------------------- -->
+
+        <div id="normal5">
+            <div><img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/3-ICONS.png?v=1645770027"></div>
+            <div><img
+                    src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1-ICONS_b6233563-9f3e-43f6-b158-5205886e2120.png?v=1645779546">
+            </div>
+            <div><img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/4-ICONS.png?v=1645770027"></div>
+            <div><img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/2-ICONS.png?v=1645770027"></div>
+        </div>
+
+        <!-- ---------------------------------------- grid6-------------------------------------- -->
+        <div id="normal6">
+            <div>
+                <p>AS SEEN IN</p>
+            </div>
+            <div>
+                <p>"Latest and greatest natural products for safe, non-toxic skincare."</p>
+            </div>
+            <div>"Dot &amp; Key are hoping to spotlight all the body parts you forget to look after."&nbsp;</div>
+            <div>"Even a 10 step routine can have blind spots. Dot &amp; Key fills in those gaps."</div>
+            <div><img
+                    src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/elle-magazine-vector-logo-3_9501c881-18bc-4482-a41a-bae5979fd0b9_180x.png?v=1596894078">
+            </div>
+            <div><img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Vogue-3-min_180x.png?v=1600165794">
+            </div>
+            <div><img
+                    src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/elle-magazine-vector-logo-2_8a4b49eb-9d7c-4864-954a-fe48fb05a208_180x.png?v=1596894127">
+            </div>
+        </div>
+
+        <!-- ---------------------------------------- midheading8-------------------------------------- -->
+        <div id="midheading8" class="midheading">
+            <p>CUSTOMER</p>
+            <h2>REVIEWS</h2>
+        </div>
+
+        <!-- ---------------------------------------- midheading9-------------------------------------- -->
+        <div id="midheading9" class="midheading">
+            <p>OUR</p>
+            <h2>SKINCARE JOURNAL</h2>
+        </div>
+
+        <!-- ---------------------------------------- grid7-------------------------------------- -->
+        <div class="row" id="normal7">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-5">
+                <img
+                    src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/image_64_1_7f2ff662-3a45-45a1-9f0c-952252786d05.png?v=1634885869">
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-5">
+                <div id="carousel-6" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-6" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-6" data-slide-to="1"></li>
+                        <li data-target="#carousel-6" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid"
+                                src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/3-SERUMS_1_1.png?v=1646917496"
+                                alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid"
+                                src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/6-CLAY_1_1.png?v=1646917497"
+                                alt="slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carousel-6" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel-6" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            <div>
+                <div>
+                    <h5>GET TO KNOW US</h5>
+                </div>
+                <div>
+                    <p> ABOUT US</p>
+                </div>
+                <div>
+                    <p>CONTACT US</p>
+                </div>
+                <div>
+                    <p>EARTHCARE</p>
+                </div>
+                <div>
+                    <p>AFFILIATE PROGRAM</p>
+                </div>
+                <div>
+                    <p>TERMS & CONDITION</p>
+                </div>
+                <div>
+                    <p>REFUND & CANCELLATION</p>
+                </div>
+                <div>
+                    <p>PRIVACY POLICY</p>
+                </div>
+                <div>
+                    <p>ORDER & SHIPPING</p>
+                </div>
+                <div>
+                    <p>PAYMENT TERMS</p>
+                </div>
+                <div>
+                    <p>TERMS OF SERVICE</p>
+                </div>
+                <div>
+                    <p>REFUND POLICY</p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h5>ALSO AVAILABLE ON</h5>
+                </div>
+                <div>
+                    <p>NYKAA</p>
+                </div>
+                <div>
+                    <p>AMAZON</p>
+                </div>
+                <div>
+                    <p>FLIPKART</p>
+                </div>
+                <div>
+                    <p>MYNTRA</p>
+                </div>
+                <div>
+                    <p>FOXY</p>
+                </div>
+                <div>
+                    <p>TRYKIYA</p>
+                </div>
+                <div>
+                    <p></p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h5>STAY UPDATED</h5>
+                </div>
+                <div><input type="email" placeholder="example@example.com"><button>submit</button></div>
+                <div>
+                    <h5>FOLLOW US</h5>
+                </div>
+                <div>
+                    <p>© 2022 Dot & Key</p>
+                </div>
+            </div>
+        </footer>
+
+
 </body>
+<!-- bootstrap js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
 </html>
