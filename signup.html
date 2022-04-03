@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Document</title>
+    <style>
+       
+        header {
+            width: 100%;
+            height: auto;
+            padding-bottom: 20px;
+            border-bottom: 0.3px solid #c5c5c0;
+        }
+
+        h6 {
+            width: 100%;
+            text-align: center;
+            background-color: #42423f;
+            color: white;
+            padding: 8px;
+            font-weight: 700;
+            font-size: x-small;
+        }
+
+        /*---------------------------------------- navvar-------------------------------------- */
+        #navvar {
+            display: flex;
+            width: 90%;
+            margin: auto;
+            align-items: center;
+        }
+
+        #navvar>div:nth-child(1) {
+            width: 35%;
+        }
+
+        #navvar>div:nth-child(2) {
+            width: 30%;
+        }
+
+        #navvar>div:nth-child(3) {
+            width: 35%;
+        }
+
+        .icon {
+            height: 25px;
+            width: 25px;
+            cursor: pointer;
+        }
+
+        #navvar>div:nth-child(3) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #input {
+            display: flex;
+            height: 30px;
+        }
+
+        input {
+            height: 28px;
+            display: block;
+        }
+
+        .form-control:focus {
+            color: #212529;
+            background-color: #fff;
+            border-color: inherit;
+            outline: 0;
+            box-shadow: none;
+        }
+
+        /*---------------------------------------- Productbar-------------------------------------- */
+       
+       
+       
+
+        /*---------------------------------------- midheading2-------------------------------------- */
+      
+        
+    
+
+        /*---------------------------------------- grid5-------------------------------------- */
+        #normal5 {
+            margin: auto;
+            display: grid;
+            grid-template-rows: 150px;
+            gap: 80px;
+            width: 55%;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        #normal5>div>img {
+            height: 100%;
+            width: 100%;
+        }
+
+        /*---------------------------------------- grid6-------------------------------------- */
+        #normal6 {
+            display: grid;
+            width: 80%;
+            margin: auto;
+            gap: 30px;
+            text-align: center;
+            color: #3c3c3c;
+            font-size: 25px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            grid-template-areas:
+                'a a a'
+                'b c d'
+                'e f g';
+        }
+
+        #normal6>div:nth-child(1) {
+            grid-area: a;
+            text-align: center;
+            font-weight: bold;
+            font-size: 23px;
+            font-style: italic;
+        }
+
+        #normal6>div:nth-child(2) {
+            grid-area: b;
+        }
+
+        #normal6>div:nth-child(3) {
+            grid-area: c;
+        }
+
+        #normal6>div:nth-child(4) {
+            grid-area: d;
+        }
+
+        #normal6>div:nth-child(5) {
+            grid-area: e;
+        }
+
+        #normal6>div:nth-child(6) {
+            grid-area: f;
+        }
+
+        #normal6>div:nth-child(7) {
+            grid-area: g;
+        }
+
+        /*---------------------------------------- grid7-------------------------------------- */
+        #normal7 {
+            width: 90%;
+            margin: auto;
+        }
+
+
+
+        footer {
+            border-top:  0.3px solid #c5c5c0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(12, auto);
+        }
+
+        footer>div {
+            font-size: 15px;
+            padding: 70px;
+        }
+        /* signup */
+        .outerbox{ 
+            border: 1px solid grey;
+            height: 800px;
+            width: 100%;
+            margin-top: 90px;
+        }
+        .innerbox{
+            /* border: 1px solid red; */
+            width: 28%;
+            height: 100%;
+            margin: auto;
+        }
+        .innerbox>h2{
+            text-align: center;
+            font-weight: 900;
+            color: #222221;
+            letter-spacing: 1px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 23px;
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+        form input{
+            height: 48px;
+            width: 98%;
+            font-size: 18px;
+            border: 1.5px solid rgb(173, 172, 172);
+        } 
+        .email>p{
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 2px;
+            color: rgb(58, 57, 57);
+            display: inline-block;
+        }
+       .email a{
+            margin-left: 56%;
+            font-size: 19px;
+            text-decoration: none;
+            color: rgb(143, 142, 142);
+        }
+       
+       .signup input{
+            background-color: #222221;
+            color: white;
+            width: 101%;
+            height: 60px;
+            margin-top: 15px;
+            font-size: 25px;
+        }
+        
+        .links >.facebook{
+           
+           width: 100%;
+           height: 45px;
+           margin: auto;
+           background-color: #4267b2;
+           color: white;
+           margin-bottom: 20px;
+       }
+       .facebook  >.login{
+           margin-left: 27%;
+           text-decoration: none;
+           color: white;
+           font-size: 17px;
+           font-weight: 500;
+       }
+       .img{
+           font-size: 20px;
+           margin-left: 15px;
+           line-height: 40px;
+       }
+       .links >.google{
+          
+          width: 100%;
+          height: 45px;
+          margin: auto;
+          background-color: #dd4b39;
+          color: white;
+          margin-bottom: 20px;
+      }
+      .google  >.login{
+          margin-left: 27%;
+          text-decoration: none;
+          color: white;
+          font-size: 17px;
+          font-weight: 500;
+      }
+      .facebook:hover{
+            background-color: #5177c5;
+        }
+        .google:hover{
+            background-color: #da5e4d;
+        }
+        .signiup:hover{
+            background-color: rgb(80, 78, 78);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h6>FREE LAVENDER VANITY POUCH ABOVE 1499</h6>
+            <!-- ---------------------------------------- navvar-------------------------------------- -->
+
+            <div id="navvar">
+                <div><a href="section.html"><img src="https://cdn-icons-png.flaticon.com/512/59/59660.png" class="icon"></a></div>
+                <div><img
+                        src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/unnamed_250x_200x_2x_260x_24408e11-6e3a-4a0c-8327-74d0455f7696_260x.jpg?v=1646547348" />
+                </div>
+                <div>
+                    <div id="input">
+                        <div><img
+                                src="https://cdn-icons.flaticon.com/png/512/2811/premium/2811806.png?token=exp=1648621590~hmac=a939009e5ce51271fa52a731ee4e86e5"
+                                class="icon"></div>
+                        <!-- <div>
+                            <form class="d-grid">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            </form>
+                        </div> -->
+                    </div>
+                    <div id="bag"><a href="bag.html"><img src="https://cdn-icons-png.flaticon.com/512/1656/1656850.png" class="icon" /></a>
+                    </div>
+                    <div id="profile"><a href="profile.html"><img src="https://cdn-icons-png.flaticon.com/512/929/929564.png" class="icon" /></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+<!-- login -->
+<main>
+    <div class="outerbox">
+        <div class="innerbox">
+          <h2>Create Account</h2>
+          <div class="links">
+            <div class="facebook">
+                <i class="fa-brands fa-facebook-f img"></i>
+                <a href="signup.html" class="login"> Facebook Login</a>
+                
+            </div>
+            
+            <div class="google">
+                <i class="fa-brands fa-google img"></i>
+                <a href="signup.html" class="login"> Google Login</a>
+                
+            </div>
+          </div>
+        <form action="">
+            <div class="email">
+                <p>FIRST NAME</p>
+                <input type="text" id="first">
+               </div>
+               <div class="email">
+                <p>LAST NAME</p>
+                <input type="text" id="last">
+               </div>
+               <div class="email">
+                <p>EMAIL</p>
+                <input type="email" id="email">
+               </div>
+               <div class="email">
+                <p>PASSWORD</p>
+                <input type="password" id="password">
+               </div>
+               <div class="signup">
+                <input type="submit" value="Create">
+               </div>
+</main>
+</div>
+
+        <footer>
+            <div>
+                <div>
+                    <h5>GET TO KNOW US</h5>
+                </div>
+                <div>
+                    <p> ABOUT US</p>
+                </div>
+                <div>
+                    <p>CONTACT US</p>
+                </div>
+                <div>
+                    <p>EARTHCARE</p>
+                </div>
+                <div>
+                    <p>AFFILIATE PROGRAM</p>
+                </div>
+                <div>
+                    <p>TERMS & CONDITION</p>
+                </div>
+                <div>
+                    <p>REFUND & CANCELLATION</p>
+                </div>
+                <div>
+                    <p>PRIVACY POLICY</p>
+                </div>
+                <div>
+                    <p>ORDER & SHIPPING</p>
+                </div>
+                <div>
+                    <p>PAYMENT TERMS</p>
+                </div>
+                <div>
+                    <p>TERMS OF SERVICE</p>
+                </div>
+                <div>
+                    <p>REFUND POLICY</p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h5>ALSO AVAILABLE ON</h5>
+                </div>
+                <div>
+                    <p>NYKAA</p>
+                </div>
+                <div>
+                    <p>AMAZON</p>
+                </div>
+                <div>
+                    <p>FLIPKART</p>
+                </div>
+                <div>
+                    <p>MYNTRA</p>
+                </div>
+                <div>
+                    <p>FOXY</p>
+                </div>
+                <div>
+                    <p>TRYKIYA</p>
+                </div>
+                <div>
+                    <p></p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h5>STAY UPDATED</h5>
+                </div>
+                <div><input type="email" placeholder="example@example.com"><button>submit</button></div>
+                <div>
+                    <h5>FOLLOW US</h5>
+                </div>
+                <div>
+                    <p>© 2022 Dot & Key</p>
+                </div>
+            </div>
+        </footer>
+
+
+</body>
+
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit",signupfunction);
+    var userData=JSON.parse(localStorage.getItem("userip"))||[];
+    //console.log(savedata);
+    function signupfunction(){
+        event.preventDefault()
+        var userobj={
+            savefirst:document.querySelector("#first").value,
+            savelast:document.querySelector("#last").value,
+         saveemail:document.querySelector("#email").value,
+         savepass:document.querySelector("#password").value,
+        }
+       //console.log(userobj);
+       userData.push(userobj);
+      
+       localStorage.setItem("userip",JSON.stringify(userData))
+       //console.log(userData)
+    }
+    var data=JSON.parse(localStorage.getItem("userip"));
+   // console.log(data) 
+</script>
