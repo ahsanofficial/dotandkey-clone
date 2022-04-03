@@ -10,6 +10,101 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <style>
+          /* -----------------------------navebarstart---------------------------- */
+          #button{
+            background-color: rgb(66,66,63);
+            color: white;
+            font-size: 25px;
+            padding: 2px;
+            border: none;
+            margin: 2px;
+        }
+        #container1 {
+            width: 100%;
+            height: auto;
+        }
+
+        img{
+             cursor: pointer;
+        }
+
+        header {
+            width: 100%;
+            height: auto;
+            padding-bottom: 20px;
+            border-bottom: 0.3px solid #c5c5c0;
+        }
+
+        h6 {
+            width: 100%;
+            text-align: center;
+            background-color: #42423f;
+            color: white;
+            padding: 8px;
+            font-weight: 700;
+            font-size: x-small;
+        }
+            /* ----------------------navebar-------------------------------------- */
+        
+          #navvar {
+            display: flex;
+            width: 90%;
+            margin: auto;
+            align-items: center;
+        }
+
+        #navvar>div:nth-child(1) {
+            width: 35%;
+        }
+
+        #navvar>div:nth-child(2) {
+            width: 30%;
+        }
+
+        #navvar>div:nth-child(3) {
+            width: 35%;
+        }
+
+        .icon {
+            height: 25px;
+            width: 25px;
+            cursor: pointer;
+        }
+
+        #navvar>div:nth-child(3) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #input {
+            display: flex;
+            height: 30px;
+        }
+
+        input {
+            height: 28px;
+            display: block;
+        }
+
+        .form-control:focus {
+            color: #212529;
+            background-color: #fff;
+            border-color: inherit;
+            outline: 0;
+            box-shadow: none;
+        }
+          /* ------------------------footer----------------------------------------- */
+          footer {
+            border-top:  0.3px solid #c5c5c0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(12, auto);
+        }
+
+        footer>div {
+            font-size: 15px;
+            padding: 70px;
+        }
         #box {
             width: 100%;
             height: 400px;
@@ -111,13 +206,124 @@
 </head>
 
 <body>
-    <h1>top summer</h1>
+    <!-- <h1>top summer</h1> -->
+    <div id="container1">
+
+   
+        <header>
+            <h6>FREE LAVENDER VANITY POUCH ABOVE 1499</h6>
+            <!-- ---------------------------------------- navvar-------------------------------------- -->
+    
+            <div id="navvar">
+                <div><a href="section.html"><img src="https://cdn-icons-png.flaticon.com/512/59/59660.png" class="icon"></a></div>
+                <div><img
+                        src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/unnamed_250x_200x_2x_260x_24408e11-6e3a-4a0c-8327-74d0455f7696_260x.jpg?v=1646547348" />
+                </div>
+                <div>
+                    <div id="input">
+                        <div><img
+                                src="https://cdn-icons.flaticon.com/png/512/2811/premium/2811806.png?token=exp=1648621590~hmac=a939009e5ce51271fa52a731ee4e86e5"
+                                class="icon"></div>
+                        <div>
+                            <form class="d-grid">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            </form>
+                        </div>
+                    </div>
+                    <div id="bag"><a href="bag.html"><img src="https://cdn-icons-png.flaticon.com/512/1656/1656850.png" class="icon" /></a>
+                    </div>
+                    <div id="profile"><a href="profile.html"><img src="https://cdn-icons-png.flaticon.com/512/929/929564.png" class="icon" /></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
     <div id="box">
 
 
     </div>
     <h1>TOP SUMMER PICKS</h1>
     <div id="container"></div>
+     <!-- ------------------------footer----------------------------------------- -->
+     <footer>
+        <div>
+            <div>
+                <h5>GET TO KNOW US</h5>
+            </div>
+            <div>
+                <p> ABOUT US</p>
+            </div>
+            <div>
+                <p>CONTACT US</p>
+            </div>
+            <div>
+                <p>EARTHCARE</p>
+            </div>
+            <div>
+                <p>AFFILIATE PROGRAM</p>
+            </div>
+            <div>
+                <p>TERMS & CONDITION</p>
+            </div>
+            <div>
+                <p>REFUND & CANCELLATION</p>
+            </div>
+            <div>
+                <p>PRIVACY POLICY</p>
+            </div>
+            <div>
+                <p>ORDER & SHIPPING</p>
+            </div>
+            <div>
+                <p>PAYMENT TERMS</p>
+            </div>
+            <div>
+                <p>TERMS OF SERVICE</p>
+            </div>
+            <div>
+                <p>REFUND POLICY</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <h5>ALSO AVAILABLE ON</h5>
+            </div>
+            <div>
+                <p>NYKAA</p>
+            </div>
+            <div>
+                <p>AMAZON</p>
+            </div>
+            <div>
+                <p>FLIPKART</p>
+            </div>
+            <div>
+                <p>MYNTRA</p>
+            </div>
+            <div>
+                <p>FOXY</p>
+            </div>
+            <div>
+                <p>TRYKIYA</p>
+            </div>
+            <div>
+                <p></p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <h5>STAY UPDATED</h5>
+            </div>
+            <div><input type="email" placeholder="example@example.com"><button id="button">submit</button></div>
+            <div>
+                <h5>FOLLOW US</h5>
+            </div>
+            <div>
+                <p>© 2022 Dot & Key</p>
+            </div>
+        </div>
+    </footer>
+
 
 </body>
 
