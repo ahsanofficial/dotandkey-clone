@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+         /* -----------------------------navebarstart---------------------------- */
+         #button{
+            background-color: rgb(66,66,63);
+            color: white;
+            font-size: 25px;
+            padding: 2px;
+            border: none;
+            margin: 2px;
+        }
+        #container1 {
+            width: 100%;
+            height: auto;
+        }
+
+        img{
+             cursor: pointer;
+        }
+
+        header {
+            width: 100%;
+            height: auto;
+            padding-bottom: 20px;
+            border-bottom: 0.3px solid #c5c5c0;
+        }
+
+        h6 {
+            width: 100%;
+            text-align: center;
+            background-color: #42423f;
+            color: white;
+            padding: 8px;
+            font-weight: 700;
+            font-size: x-small;
+        }
+            /* ----------------------navebar-------------------------------------- */
+        
+          #navvar {
+            display: flex;
+            width: 90%;
+            margin: auto;
+            align-items: center;
+        }
+
+        #navvar>div:nth-child(1) {
+            width: 35%;
+        }
+
+        #navvar>div:nth-child(2) {
+            width: 30%;
+        }
+
+        #navvar>div:nth-child(3) {
+            width: 35%;
+        }
+
+        .icon {
+            height: 25px;
+            width: 25px;
+            cursor: pointer;
+        }
+
+        #navvar>div:nth-child(3) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #input {
+            display: flex;
+            height: 30px;
+        }
+
+        input {
+            height: 28px;
+            display: block;
+        }
+
+        .form-control:focus {
+            color: #212529;
+            background-color: #fff;
+            border-color: inherit;
+            outline: 0;
+            box-shadow: none;
+        }
+          /* ------------------------footer----------------------------------------- */
+          footer {
+            border-top:  0.3px solid #c5c5c0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(12, auto);
+        }
+
+        footer>div {
+            font-size: 15px;
+            padding: 70px;
+        }
+        #box {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(1, 400px);
+            border: 1px solid red;
+
+            border-radius: 10px;
+            /* background-color: blue; */
+            background-image: url("https://cdn.shopify.com/s/files/1/0361/8553/8692/collections/shop-all_mobile_1512x.jpg?v=1642098283");
+        }
+        #container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 50px;
+            width: 97%;
+            height: auto;
+            /* border: 1px solid red; */
+            margin: auto;
+            margin-top: 70px;
+        }
+        .button {
+            padding: 10px 106px 10px 106px;
+            border: none;
+            background-color:
+                #ff6781;
+            color: white;
+            margin-top: 10px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+        }
+        #container div {
+            border: 2px solid white;
+
+        }
+        .inner {
+            display: flex;
+            justify-content: center;
+
+        }
+        .proname {
+            margin: 13px;
+            /* align-items: center;
+            align-content: center; */
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+             font-size: 15px;
+             line-height: 17px;
+        }
+        .offerp {
+            text-decoration: line-through;
+        }
+        .pimage {
+            width: 302px;
+        }
+        /* media quariya for mediam */
+        @media all and (min-width:421px) and (max-width:720px) {
+            #box{
+                grid-template-rows: repeat(1, 280px);
+                background-image: url("https://cdn.shopify.com/s/files/1/0361/8553/8692/collections/shop-all_mobile_1512x.jpg?v=1642098283");
+
+            }
+            #container {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(6, auto);
+            }   
+       
+
+        }
+         /* media for small */
+         @media all and (min-width:200px) and (max-width:421px) {
+            #box{
+                grid-template-rows: repeat(1, 280px);
+                background-image: url("https://cdn.shopify.com/s/files/1/0361/8553/8692/collections/shop-all_mobile_1512x.jpg?v=1642098283");
+
+            }
+            #container {
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: auto;
+            }
+
+         }
+
+        
+    </style>
+</head>
+
+<body>
+    <!-- <h1>Best seller</h1> -->
+    <div id="container1">
+
+   
+        <header>
+            <h6>FREE LAVENDER VANITY POUCH ABOVE 1499</h6>
+            <!-- ---------------------------------------- navvar-------------------------------------- -->
+    
+            <div id="navvar">
+                <div><a href="section.html"><img src="https://cdn-icons-png.flaticon.com/512/59/59660.png" class="icon"></a></div>
+                <div><img
+                        src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/unnamed_250x_200x_2x_260x_24408e11-6e3a-4a0c-8327-74d0455f7696_260x.jpg?v=1646547348" />
+                </div>
+                <div>
+                    <div id="input">
+                        <div><img
+                                src="https://cdn-icons.flaticon.com/png/512/2811/premium/2811806.png?token=exp=1648621590~hmac=a939009e5ce51271fa52a731ee4e86e5"
+                                class="icon"></div>
+                        <div>
+                            <form class="d-grid">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            </form>
+                        </div>
+                    </div>
+                    <div id="bag"><a href="bag.html"><img src="https://cdn-icons-png.flaticon.com/512/1656/1656850.png" class="icon" /></a>
+                    </div>
+                    <div id="profile"><a href="profile.html"><img src="https://cdn-icons-png.flaticon.com/512/929/929564.png" class="icon" /></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div id="box">
+
+
+    </div>
+    <div id="container"></div>
+      <!-- ------------------------footer----------------------------------------- -->
+      <footer>
+        <div>
+            <div>
+                <h5>GET TO KNOW US</h5>
+            </div>
+            <div>
+                <p> ABOUT US</p>
+            </div>
+            <div>
+                <p>CONTACT US</p>
+            </div>
+            <div>
+                <p>EARTHCARE</p>
+            </div>
+            <div>
+                <p>AFFILIATE PROGRAM</p>
+            </div>
+            <div>
+                <p>TERMS & CONDITION</p>
+            </div>
+            <div>
+                <p>REFUND & CANCELLATION</p>
+            </div>
+            <div>
+                <p>PRIVACY POLICY</p>
+            </div>
+            <div>
+                <p>ORDER & SHIPPING</p>
+            </div>
+            <div>
+                <p>PAYMENT TERMS</p>
+            </div>
+            <div>
+                <p>TERMS OF SERVICE</p>
+            </div>
+            <div>
+                <p>REFUND POLICY</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <h5>ALSO AVAILABLE ON</h5>
+            </div>
+            <div>
+                <p>NYKAA</p>
+            </div>
+            <div>
+                <p>AMAZON</p>
+            </div>
+            <div>
+                <p>FLIPKART</p>
+            </div>
+            <div>
+                <p>MYNTRA</p>
+            </div>
+            <div>
+                <p>FOXY</p>
+            </div>
+            <div>
+                <p>TRYKIYA</p>
+            </div>
+            <div>
+                <p></p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <h5>STAY UPDATED</h5>
+            </div>
+            <div><input type="email" placeholder="example@example.com"><button id="button">submit</button></div>
+            <div>
+                <h5>FOLLOW US</h5>
+            </div>
+            <div>
+                <p>© 2022 Dot & Key</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+</body>
+
+</html>
+<script>
+    var bestseller = [
+        {
+            image_url: "https://cdn.shopify.com/s/files/1/0361/8553/8692/products/Artboard1-3_2_78dd953a-9e91-4c53-8127-68f733ff8f8c_360x.jpg?v=1646474987",//1
+            pname: "VITAMIN C+E SUPER BRIGHT MOISTURIZER",
+            strikedoffprice: " 595.00 ",
+            price: " 565.00",
+        },
+        {
+            image_url: "https://cdn.shopify.com/s/files/1/0361/8553/8692/products/pro_360x.png?v=1646543242",//2
+            pname: "72 HR HYDRATING GEL WITH PROBIOTICS | FOR OILY SKIN",
+            strikedoffprice: " 745.00 ",
+            price: "  670.00",
+        },
+        {
+            image_url: "https://cdn.shopify.com/s/files/1/0361/8553/8692/products/Artboard1_2_360x.jpg?v=1646475136",//3
+            pname: "CICA CALMING ANTI-ACNE NIGHT GEL WITH NIACINAMIDE",
+            strikedoffprice: " 595.00  ",
+            price: "  565.00",
+        },
+        {
+            image_url: "https://cdn.shopify.com/s/files/1/0361/8553/8692/products/Artboard1-12_360x.jpg?v=1646474736",//4
+            pname: "RETINOL + CERAMIDE NIGHT CREAM",
+            strikedoffprice: " 945.00   ",
+            price: "   850.00 ",
+        },
+        {
+            image_url: "https://cdn.shopify.com/s/files/1/0361/8553/8692/products/Artboard1-8_360x.jpg?v=1646475626",//5
+            pname: "VITAMIN C SERUM FOR GLOWING SKIN",
+            strikedoffprice: " 975.00 ",
+            price: " 828.06 ",
+        },
+        {
+            image_url: "https://cdn.shopify.com/s/files/1/0361/8553/8692/products/Artboard1-5_e9b6f30c-2046-4db7-b304-4999e2442d9c_360x.jpg?v=1646475887",//6
+            pname: "MORINGA & ARGAN HAIR FALL CONTROL SHAMPOO",
+            strikedoffprice: " 695.00 ",
+
+            price: "   625.01 ",
+        },
+        {
+            image_url: "https://cdn.shopify.com/s/files/1/0361/8553/8692/products/Artboard1-7_9a3af011-3356-4242-82df-c04322d27a6a_360x.jpg?v=1646475324",//7
+            pname: "10% NIACINAMIDE DARK SPOT CORRECTING SERUM",
+            strikedoffprice: "1095.00 ",
+
+            price: " 930.00 ",
+        },
+        {
+            image_url: "https://cdn.shopify.com/s/files/1/0361/8553/8692/products/1-Green-Clay-Listing_1_360x.jpg?v=1648088706",//8
+            pname: "ACNE DEFENSE GREEN CLAY MASK | WITH SALICYLIC ACID",
+
+            strikedoffprice: "695.00  ",
+
+            price: " 625.00",
+        },
+        {
+            image_url: "https://cdn.shopify.com/s/files/1/0361/8553/8692/products/lipf_360x.png?v=1646980857",//9
+            pname: "LIP SLEEPING MASK WITH VITAMIN C",
+
+            strikedoffprice: "645.00 ",
+
+            price: " 612.04",
+        },
+        {
+            image_url: "https://cdn.shopify.com/s/files/1/0361/8553/8692/products/Artboard1-6_86414d7e-8242-4895-bdf3-4a85fee6de1d_360x.jpg?v=1646475842",//10-1
+            pname: "WATERMELON + VITAMIN C SUPERGLOW FACE WASH",
+
+
+
+            price: "395.00",
+        },
+        {
+            image_url: "https://cdn.shopify.com/s/files/1/0361/8553/8692/products/Artboard1-4_2_610c50b1-5319-446c-b3e6-161c654063dd_360x.jpg?v=1646475700",//11
+            pname: "5-IN-1 VITAMIN C GLOW KIT",
+
+            strikedoffprice: " 1705.00 ",
+
+            price: "1245.00",
+        },
+    ];
+    var cartData = JSON.parse(localStorage.getItem("cart")) || [];//1
+    bestseller.map(function (elem) {
+        var box = document.createElement("div");
+
+
+        var img = document.createElement("img");
+        img.src = elem.image_url;
+        img.setAttribute("class", "pimage")
+
+        var name = document.createElement("p");
+        name.setAttribute("class", "proname")
+        name.textContent = elem.pname;
+        name.style.color = "#42423f";
+        var div1 = document.createElement("div");//for price
+        div1.setAttribute("class", "inner")
+        var offerprice = document.createElement("p");
+        offerprice.innerText = "RS" + " " + elem.strikedoffprice;
+        offerprice.setAttribute("class", "offerp")
+
+
+
+        var price = document.createElement("p");
+        price.setAttribute("class", "mprice")
+        price.innerText = "  RS :" + " " + elem.price;
+        price.style.color = " #ff6781";
+
+        div1.append(offerprice, price);
+
+        var btn = document.createElement("button");
+        btn.innerText = "ADD TO CART";
+        btn.setAttribute("class", "button")
+        btn.addEventListener("click", function () {
+            addToCart(elem);
+        });
+
+        box.append(img, name, div1, btn);
+
+        document.querySelector("#container").append(box);
+    });
+
+    function addToCart(elem) {
+        console.log(elem);
+        cartData.push(elem);//2
+        localStorage.setItem("cart", JSON.stringify(cartData));//3
+        alert("item added to cart");
+    }
+
+</script>
