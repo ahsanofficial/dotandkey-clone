@@ -11,24 +11,26 @@
     <!-- slider css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
 
     <title>Document</title>
     <style>
-        button{
-            background-color: rgb(66,66,63);
+        button {
+            background-color: rgb(66, 66, 63);
             color: white;
-            font-size: 25px;
-            padding: 2px;
+            font-size: 17px;
+            padding: 10px 15px 10px 15px;
             border: none;
             margin: 2px;
         }
+
         #container {
             width: 100%;
             height: auto;
         }
 
-        img{
-             cursor: pointer;
+        img {
+            cursor: pointer;
         }
 
         header {
@@ -48,35 +50,55 @@
             font-size: x-small;
         }
 
-        /*---------------------------------------- navvar-------------------------------------- */
+        /*---------------------------------------- navvar------------------------------------- */
         #navvar {
-            display: flex;
+            display: grid;
             width: 90%;
             margin: auto;
             align-items: center;
+            gap: 80px;
+            grid-template-columns: repeat(3 ,1fr);
+            grid-template-rows: auto;
+            grid-template-areas: 'a b c';
         }
 
         #navvar>div:nth-child(1) {
-            width: 35%;
+            grid-area: a;
         }
 
         #navvar>div:nth-child(2) {
-            width: 30%;
+            grid-area: b;
+
         }
 
         #navvar>div:nth-child(3) {
-            width: 35%;
+            /* width: 35%; */
+            display: grid;
+            grid-area: c;
+            width: 100%;
+            margin: auto;
+            align-items: center;
+            gap: 20px;
+            grid-template-columns: 10fr 1fr 1fr;
+            grid-template-rows: auto;
+            grid-template-areas: 'd e f';
+
+        }
+        #navvar>div:nth-child(3)>div:nth-child(1) {
+            grid-area: d;
+        }
+
+        #navvar>div:nth-child(3)>div:nth-child(2) {
+            grid-area: e;
+        }
+        #navvar>div:nth-child(3)>div:nth-child(3) {
+            grid-area: f;
         }
 
         .icon {
             height: 25px;
             width: 25px;
             cursor: pointer;
-        }
-
-        #navvar>div:nth-child(3) {
-            display: flex;
-            justify-content: space-between;
         }
 
         #input {
@@ -104,14 +126,32 @@
             margin-top: 20px;
             margin-bottom: 20px;
             width: 97%;
+            gap: 25px;
             grid-template-columns: repeat(5, 1fr);
             grid-template-rows: 180px;
-            gap: 25px;
+            grid-template-areas: 
+            'pa pb pc pd pe';
         }
 
         #productbar>div {
             border-radius: 0.5em;
             box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+
+        #productbar>div:nth-child(1) {
+            grid-area: pa;
+        }
+        #productbar>div:nth-child(2) {
+            grid-area: pb;
+        }
+        #productbar>div:nth-child(3) {
+            grid-area: pc;
+        }
+        #productbar>div:nth-child(4) {
+            grid-area: pd;
+        }
+        #productbar>div:nth-child(5) {
+            grid-area: pe;
         }
 
         #productbar>div>h5 {
@@ -163,6 +203,8 @@
 
         /*---------------------------------------- midheading2-------------------------------------- */
 
+       
+
         .midheading {
             margin-top: 100px;
             text-align: center;
@@ -204,6 +246,8 @@
             width: 1px;
             background-color: #42423f;
         }
+
+        
 
         /*---------------------------------------- slider2-------------------------------------- */
         #slider2 {
@@ -297,16 +341,17 @@
 
         /*---------------------------------------- gridlast-------------------------------------- */
 
-        #gridlast{
+        #gridlast {
             display: grid;
             margin: auto;
             width: 80%;
-            grid-template-columns: repeat(2,1fr);
+            grid-template-columns: repeat(2, 1fr);
             grid-auto-flow: repeat(2, 200px);
             gap: 55px;
             row-gap: 15px;
         }
-        #gridlast>div>img{
+
+        #gridlast>div>img {
             height: 100%;
             width: 100%;
         }
@@ -323,6 +368,11 @@
             height: 100%;
             width: 100%;
             border-radius: 0.8em;
+        }
+
+         /*---------------------------------------- midheading6-------------------------------------- */
+         #midheading4 {
+            padding-top: 110px;
         }
 
         /*---------------------------------------- midheading6-------------------------------------- */
@@ -432,20 +482,140 @@
             width: 90%;
             margin: auto;
         }
+        #normal7 img{
+            height: 100%;
+            width: 100%;
+        }
 
-
+        /*---------------------------------------- footer-------------------------------------- */
 
         footer {
-            border-top:  0.3px solid #c5c5c0;
+            border-top: 0.3px solid #c5c5c0;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(12, auto);
+            grid-template-rows: auto;
+            letter-spacing: 2px;
+            grid-template-areas: 
+            'a b c';
         }
 
         footer>div {
             font-size: 15px;
             padding: 70px;
         }
+        footer>div:nth-child(1) {
+            grid-area: a;
+        }
+
+        footer>div:nth-child(2) {
+            grid-area: b;
+        }
+        footer>div:nth-child(3) {
+            grid-area: c;
+        }
+
+        #footermedia>div{
+            display: flex;
+
+        }
+        #footermedia input{
+            border: none;
+            outline: none;
+        }
+        #footermedia>div:nth-child(3){
+            margin-top: 20px;
+            column-gap: 10px;
+
+        }
+
+         /* Medium screens */
+        @media only screen and (min-width: 0px) and (max-width: 910px) { 
+            #navvar{
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: 
+                'a b'
+                'c c';
+            }
+            #navvar>div:nth-child(3) {
+            grid-template-columns: 10fr 1fr 1fr;
+            grid-template-rows: auto;
+        }
+        #normal6{
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-areas:
+                'a'
+                'b'
+                'e' 
+                'c'
+                'f'
+                'd'
+                'g';
+        }
+         }
+
+         /* medium screen */
+        @media only screen and (min-width: 770px) and (max-width: 910px) { 
+       
+            #productbar{
+            grid-template-columns: repeat(6,1fr);
+            grid-template-areas: 
+            'pa pa pb pb pc pc'
+            'pd pd pd pe pe pe';
+        }
+
+        footer {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            grid-template-areas: 
+            'a b'
+            'c c'
+        }
+        }
+
+        /* small screen */
+        @media only screen and (min-width: 431px) and (max-width: 769px) { 
+        
+            #productbar{
+            grid-template-columns: repeat(6,1fr);
+            grid-template-areas: 
+            'pa pa pb pb pc pc'
+            'pd pd pd pe pe pe';
+        }
+        footer {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-areas: 
+            'a'
+            'b'
+            'c';
+        }
+        }
+        
+
+        /* extra small */
+        @media only screen and (min-width: 0px) and (max-width: 430px) { 
+            #productbar{
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+            'pa'
+            'pb'
+            'pc'
+            'pc'
+            'pd'
+            'pe';
+        } 
+        footer {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-areas: 
+            'a'
+            'b'
+            'c';
+        }
+        }
+
+
     </style>
 </head>
 
@@ -456,7 +626,8 @@
             <!-- ---------------------------------------- navvar-------------------------------------- -->
 
             <div id="navvar">
-                <div><a href="section.html"><img src="https://cdn-icons-png.flaticon.com/512/59/59660.png" class="icon"></a></div>
+                <div><a href="section.html"><img src="https://cdn-icons-png.flaticon.com/512/59/59660.png"
+                            class="icon"></a></div>
                 <div><img
                         src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/unnamed_250x_200x_2x_260x_24408e11-6e3a-4a0c-8327-74d0455f7696_260x.jpg?v=1646547348" />
                 </div>
@@ -471,9 +642,11 @@
                             </form>
                         </div>
                     </div>
-                    <div id="bag"><a href="bag.html"><img src="https://cdn-icons-png.flaticon.com/512/1656/1656850.png" class="icon" /></a>
+                    <div id="bag"><a href="bag.html"><img src="https://cdn-icons-png.flaticon.com/512/1656/1656850.png"
+                                class="icon" /></a>
                     </div>
-                    <div id="profile"><a href="profile.html"><img src="https://cdn-icons-png.flaticon.com/512/929/929564.png" class="icon" /></a>
+                    <div id="profile"><a href="profile.html"><img
+                                src="https://cdn-icons-png.flaticon.com/512/929/929564.png" class="icon" /></a>
                     </div>
                 </div>
             </div>
@@ -598,7 +771,7 @@
         </section>
 
         <!-- ---------------------------------------- midheading2-------------------------------------- -->
-        <div id="midheading2" class="midheading">
+        <!-- <div id="midheading2" class="midheading">
             <p>OUR</p>
             <h2>BESTSELLERS</h2>
             <div class="midheading_div">
@@ -610,10 +783,10 @@
                 <div></div>
                 <span>HAIRCARE</span>
             </div>
-        </div>
+        </div> -->
 
         <!-- ---------------------------------------- midheading3-------------------------------------- -->
-        <div id="midheading3" class="midheading">
+        <!-- <div id="midheading3" class="midheading">
             <p>TOP</p>
             <h2>SUMMER PICKS</h2>
             <div class="midheading_div" id="midheading_div3">
@@ -625,13 +798,13 @@
                 <div></div>
                 <span>NUTRITION</span>
             </div>
-        </div>
+        </div> -->
 
         <!-- ---------------------------------------- midheading3-------------------------------------- -->
-        <div id="midheading3" class="midheading">
+        <!-- <div id="midheading3" class="midheading">
             <p>FIND YOUR</p>
             <h2>SKINCARE REGIME</h2>
-        </div>
+        </div> -->
 
         <!-- ---------------------------------------- midheading4-------------------------------------- -->
         <div id="midheading4" class="midheading">
@@ -674,8 +847,10 @@
 
         <div id="gridlast">
             <div><img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard_1_11.jpg?v=1642572083"></div>
-            <div><img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard_1-2_1.jpg?v=1642508302"></div>
-            <div><img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard_1-3_3.jpg?v=1642508305"></div>
+            <div><img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard_1-2_1.jpg?v=1642508302">
+            </div>
+            <div><img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard_1-3_3.jpg?v=1642508305">
+            </div>
             <div><img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard_5.png?v=1643092291"></div>
         </div>
 
@@ -746,10 +921,10 @@
         </div>
 
         <!-- ---------------------------------------- midheading8-------------------------------------- -->
-        <div id="midheading8" class="midheading">
+        <!-- <div id="midheading8" class="midheading">
             <p>CUSTOMER</p>
             <h2>REVIEWS</h2>
-        </div>
+        </div> -->
 
         <!-- ---------------------------------------- midheading9-------------------------------------- -->
         <div id="midheading9" class="midheading">
@@ -758,6 +933,41 @@
         </div>
 
         <!-- ---------------------------------------- grid7-------------------------------------- -->
+        <!-- <div class="row" id="normal7">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-5">
+                <img
+                    src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/image_64_1_7f2ff662-3a45-45a1-9f0c-952252786d05.png?v=1634885869">
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-5">
+                <div id="carousel-6" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-6" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-6" data-slide-to="1"></li>
+                        <li data-target="#carousel-6" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid"
+                                src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/3-SERUMS_1_1.png?v=1646917496"
+                                alt="slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid"
+                                src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/6-CLAY_1_1.png?v=1646917497"
+                                alt="slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carousel-6" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel-6" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+
+        </div> -->
+
         <div class="row" id="normal7">
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-5">
                 <img
@@ -858,20 +1068,24 @@
                     <p></p>
                 </div>
             </div>
-            <div>
+            <div id="footermedia">
                 <div>
                     <h5>STAY UPDATED</h5>
                 </div>
-                <div><input type="email" placeholder="example@example.com"><button>submit</button></div>
+                <div><input type="email" placeholder="example@example.com"><button>SUBMIT</button></div>
                 <div>
-                    <h5>FOLLOW US</h5>
+                    <h5>FOLLOW US </h5>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJiweAcBjKDpCxYZwr5o7BY4wa-HZ5hiK4Pw&usqp=CAU"
+                        style="height: 30px; width:30px;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbAk0FKWJld7VmDCjJ4yFEBvb5dUyzlCcTmA&usqp=CAU"
+                        style="height: 22px; width:25px;">
+                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbCXYgdiuZh54l6pwnVo_9obaCLFwIt-hA1w&usqp=CAU"  style="height: 22px; width:25px;">    
                 </div>
                 <div>
                     <p>© 2022 Dot & Key</p>
                 </div>
             </div>
         </footer>
-
 
 </body>
 <!-- bootstrap js -->
