@@ -5,8 +5,282 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+       
+       /* body{
+           /* width: 30%; */
+           /* background-color:#3c3c3c */
+       /* } */ 
+       #bag_container{
+           width: 30%;
+           height: 800px;
+           box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+           font-family: sans-serif;
+           text-align: right;
+           margin-bottom: 40px;
+           margin-left: 70%;
+           margin-top: -15px;
+    
+
+
+       }
+       #bag_items{
+           height: 280px;
+           
+       }
+
+       #bag_header{
+           width:85%;
+           height: 70px;
+           border-bottom: 2px solid rgb(63, 59, 59);
+           font-size: 28px;
+           margin: auto;
+           margin-top: 30px;
+           /* padding: 20px; */
+           box-sizing: border-box;
+           display: flex;
+           justify-content: space-between;
+       }
+
+       .close{
+           padding: 5px 10px;
+           font-size: 20px;
+           border: none;
+           background-color: white;
+           color: rgb(63, 59, 59);
+       }
+
+       #cart_container{
+           width: 85%;
+           height: 134px;
+           font-size: 18px;
+           margin: auto;
+           font-family: sans-serif;
+           /* border: 1px solid black; */
+           text-transform: uppercase;
+           text-align: center;
+           display: flex; 
+           /* justify-content: center;
+           align-items: center; */
+           color: #3c3c3c;
+       }
+
+       #outBox{
+
+           margin: auto;
+           margin-top: 20px;
+           width: 85%;
+           padding: 10px;
+           box-sizing: border-box;
+           /* border: 1px solid black; */
+           
+       }
+
+       .image{
+           width:150px;
+           height: 150px;
+           margin-right: 150%;
+           margin-left: -10px;
+
+       }
+
+       .box2{
+            margin-left: 150px;
+       }
+
+       .row1{
+           display: flex;
+           margin-top: -15px;
+           /* justify-content: space-around; */
+           align-items: center;
+           
+       }
+
+       .counter{
+           width: 120px;
+           height:40px;
+           display: grid;
+           /* font-size: 40px; */
+           grid-template-columns: 24% 48% 24%;
+            
+           /* border: 1px solid black; */
+       }
+
+       .counter_style{
+           border : 0.5px solid black;
+           background-color: white;
+           font-size: 25px;
+           text-align: center;
+       }
+
+       .row2{
+           display: flex;
+           /* justify-content: space-around; */
+           align-items: center;
+       }
+
+       .close_button{
+           height: 30px;
+           background-color: white;
+           border: none;
+           font-size: 18px;
+           margin-top: -140px;
+       }
+
+       .price{
+           font-size: 15px;
+           margin-left: 10px;
+           margin-top: -130px;
+       }
+       p{
+           margin-top: -120px;
+           width: 100%;
+           font-size: 15px;
+       }
+    </style>
 </head>
 <body>
-    <h1>bag page</h1>
+    <div id="bag_container">
+        <!-- <form action=""> -->
+            <div id="bag_items">
+                <div id="bag_header">
+                    <div>Bag 
+                        <span id="total_items" style="color:#ff6781">(0)</span>
+                    </div>
+    
+                    <div>
+                        <button class="close">X</button>
+                    </div>
+                    <!-- <hr/> -->
+                </div>
+
+                <div class="cart_items">
+
+                </div>
+
+            </div>
+            
+            
+            <div id="cart_container">
+                <div>
+                    <p id="empty_tag">Your bag is empty. let's fill it up!</p>
+                </div>
+                </div>
+        <!-- </form> -->
+        
+ 
+
+    </div>
+    
 </body>
 </html>
+
+
+<script>
+
+var goCartData = JSON.parse(localStorage.getItem("cart")) || [];
+     
+if(goCartData != null)
+{
+    document.querySelector("#empty_tag").innerText = "";
+}
+
+     var outBox = document.createElement("div");
+     outBox.setAttribute("id", "outBox");
+
+     document.querySelector(".cart_items").append(outBox);
+
+
+     goCartData.map(function(ele){
+        var box1 = document.createElement("div");
+        box1.setAttribute("class", "box1");
+
+        var image = document.createElement('img');
+        image.src = ele. image_url;
+        image.setAttribute("class", "image");
+        box1.append(image);
+
+        var box2 = document.createElement("div");
+        box2.setAttribute("class", "box2");
+
+        var row1 = document.createElement('div');
+        row1.setAttribute("class", "row1");
+
+        var name1 = document.createElement('p');
+        name1.innerText = ele.pname;
+
+        var close = document.createElement('button');
+        close.innerText = "X";
+        close.setAttribute("class", "close_button");
+        // close.style.fontSize = "16px";
+
+        var weight = document.createElement("p");
+        weight.innerText = ele.weight;
+
+        row1.append(name1, close, weight);
+
+
+        var row2 = document.createElement('div');
+        row2.setAttribute("class", "row2");
+
+        var counter = document.createElement('div');
+        counter.setAttribute("class", "counter");
+        
+        var decrement = document.createElement('button');
+        decrement.innerText = "-";
+        decrement.setAttribute("class", "counter_style");
+        // decrement.addEventListener("click", decrementFn);
+
+
+        var count = document.createElement('input');
+        count.value = 0;
+        count.style.borderLeft = "none";
+        count.style.borderRight = "none";
+        count.setAttribute("class", "counter_style");
+        
+
+        var increment = document.createElement('button');
+        increment.innerText = "+";
+        increment.setAttribute("class", "counter_style");
+        // increment.addEventListener("click", incrementFn);
+
+        counter.append(decrement, count, increment);
+
+
+        var price = document.createElement('p');
+        price.setAttribute("class", "price");
+        price.innerText = ele.price;
+
+        row2.append(counter, price);
+
+
+        // var box2 = document.createElement('div');
+        // box2.setAttribute("class", "box2");
+
+     
+        
+
+        // var sPrice = document.createElement('p');
+        // sPrice.setAttribute("class", "sPrice");
+        // sPrice.innerText = ele.strikedOfPrice;
+        // sPrice.style.textDecoration = "line through";
+       
+        box2.append(row1, row2);
+        // box.append(box1,box2);
+        outBox.append(box1, box2);
+    })
+
+
+    
+    // function decrementFn(){
+    //      count.value--;
+       
+    // }
+
+    // function incrementFn(){
+    //      count.value++;
+       
+    // }
+    
+
+</script>
